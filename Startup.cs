@@ -26,7 +26,7 @@ namespace ContasAPagar
             services.AddDbContext<DataContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext db)
         {
             if (env.IsDevelopment())
             {
@@ -51,6 +51,8 @@ namespace ContasAPagar
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
                 c.RoutePrefix = string.Empty;
             });
+
+            db.Database.Migrate();
         }
     }
 }
