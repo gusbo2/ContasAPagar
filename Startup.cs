@@ -1,5 +1,7 @@
+using ContasAPagar.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +23,7 @@ namespace ContasAPagar
             services.AddCors();
             services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Startup));
+            services.AddDbContext<DataContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
