@@ -118,26 +118,9 @@ namespace ContasAPagar.Services.Bills
         private GetBillDto BillToBillDto(Bill bill)
         {
             var billDto = _mapper.Map<GetBillDto>(bill);
-            billDto.DaysInArrears = (int)(billDto.PayDate - bill.ExpirationDate).TotalDays;
-            billDto.CorrectedValue = CalculateTaxes(billDto.DaysInArrears, billDto.Value);
+            billDto.DaysInArrears = bill.GetDaysInArrears();
+            billDto.CorrectedValue = bill.CalculateTaxes();
             return billDto;
-        }
-
-        private double CalculateTaxes(int daysInArrears, double value)
-        {
-            var (multa, juros) = getTaxes(daysInArrears);
-            var valueWithTaxes = value + (value * multa);
-            valueWithTaxes += valueWithTaxes * juros;
-            return Math.Round(valueWithTaxes, 2);
-        }
-
-        private (double, double) getTaxes(int daysInArrears)
-        {
-            if (daysInArrears > 0 && daysInArrears <= 3)
-                return (0.02, 0.001);
-            else if (daysInArrears > 3 && daysInArrears <= 5)
-                return (0.03, 0.002);
-            return (0.05, 0.003);
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContasAPagar", "ContasAPagar\ContasAPagar.csproj", "{C79AEBF3-687C-452F-A90A-BB3415F452F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContasAPagarUnitTest", "ContasAPagarUnitTest\ContasAPagarUnitTest.csproj", "{67558B74-A334-4098-8965-7A55FBD164DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C79AEBF3-687C-452F-A90A-BB3415F452F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79AEBF3-687C-452F-A90A-BB3415F452F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79AEBF3-687C-452F-A90A-BB3415F452F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79AEBF3-687C-452F-A90A-BB3415F452F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67558B74-A334-4098-8965-7A55FBD164DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67558B74-A334-4098-8965-7A55FBD164DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67558B74-A334-4098-8965-7A55FBD164DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67558B74-A334-4098-8965-7A55FBD164DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {926BC750-BC34-46C0-9DC5-744BDFE2C4BB}
+	EndGlobalSection
+EndGlobal
