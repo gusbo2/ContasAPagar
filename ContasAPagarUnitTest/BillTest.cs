@@ -7,6 +7,7 @@ namespace ContasAPagarUnitTest
     public class BillTest
     {
         [Theory]
+        [InlineData(-5, "Luz", 50.00, "12/02/2020", "07/02/2020")]
         [InlineData(0, "Luz", 50.00, "12/02/2020", "12/02/2020")]
         [InlineData(3, "Luz", 50.00, "12/02/2020", "15/02/2020")]
         [InlineData(5, "Luz", 50.00, "12/02/2020", "17/02/2020")]
@@ -18,6 +19,7 @@ namespace ContasAPagarUnitTest
         }
         
         [Theory]
+        [InlineData(0, "Luz", 50.00, "12/02/2020", "07/02/2020")]
         [InlineData(0, "Luz", 50.00, "12/02/2020", "12/02/2020")]
         [InlineData(0.02, "Luz", 50.00, "12/02/2020", "15/02/2020")]
         [InlineData(0.03, "Luz", 50.00, "12/02/2020", "17/02/2020")]
@@ -30,6 +32,7 @@ namespace ContasAPagarUnitTest
         }
 
         [Theory]
+        [InlineData(0, "Luz", 50.00, "12/02/2020", "07/02/2020")]
         [InlineData(0, "Luz", 50.00, "12/02/2020", "12/02/2020")]
         [InlineData(0.001, "Luz", 50.00, "12/02/2020", "15/02/2020")]
         [InlineData(0.002, "Luz", 50.00, "12/02/2020", "17/02/2020")]
@@ -42,6 +45,7 @@ namespace ContasAPagarUnitTest
         }
 
         [Theory]
+        [InlineData(50.00, "Luz", 50.00, "12/02/2020", "07/02/2020")]
         [InlineData(50.00, "Luz", 50.00, "12/02/2020", "12/02/2020")]
         [InlineData(51.15, "Luz", 50.00, "12/02/2020", "15/02/2020")]
         [InlineData(52.02, "Luz", 50.00, "12/02/2020", "17/02/2020")]
