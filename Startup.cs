@@ -1,4 +1,5 @@
 using ContasAPagar.Data;
+using ContasAPagar.Services.Bills;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,8 @@ namespace ContasAPagar
             services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<DataContext>(c => c.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IBillService, BillService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext db)
